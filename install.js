@@ -3,6 +3,7 @@ const installBtn = document.querySelector("#installBtn");
 
 let deferredPrompt = null;
 
+installBtn.classList.add('hidden');
 
 window.addEventListener('beforeinstallprompt', e => {
     e.preventDefault();
