@@ -12,8 +12,22 @@ window.addEventListener('beforeinstallprompt', e => {
     deferredPrompt = e;
 })
 
-installBtn.addEventListener("click", e => {
+installBtn.addEventListener("click", async e => {
     e.preventDefault();
-    //On utilise le prompt
+
+    //On utilise le prompt pour lancer l'installation
     deferredPrompt.prompt();
+
+    //Si on a installé l'app, le bouton sera masqué
+    const userChoice = await deferredPrompt.userChoice;
+    if(userChoice === "accepted"){
+        installBtn.classList.add("hidden");
+    }
+    deferredPrompt = null;
+
+})
+//Event qui dit si mon app est installé
+window.addEventListener('appinstalled', e=> {
+    //Alors je n'affiche pas le bouton
+    installBtn.classList.add('hidden');
 })
