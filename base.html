@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PWA</title>
-    <link rel="icon" href="/favicon.ico">
-
-</head>
-<body>
-    <h1>Une démo PWA</h1>
-    <hr>
-    <h2>Voyage</h2>
-    <p>Voyage en <span class="voyage"></span></p>
-    <hr>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PWA</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="style.css" />
+        <script defer src="script.js"></script>
+    </head>
+    <body>
+        <nav>
+            <h1 class="title">Une démo PWA</h1>
+            <hr class="titleHr" />
+        </nav>
+        <h2>Voyage</h2>
+        <p>
+            Voyage en
+            <span class="voyage" id="voyage"></span>
+        </p>
+        <p class="description">
+            <span id="description"></span>
+        </p>
+        <p class="prix">Prix : <span id="prix"></span> €</p>
+        <hr />
+    </body>
 </html>
