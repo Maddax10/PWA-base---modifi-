@@ -1,33 +1,31 @@
-//Va permettre d'installer l'app
-const installBtn = document.querySelector("#installBtn");
+const install = () => {
+  const installBtn = document.querySelector("#installBtn");
 
-let deferredPrompt = null;
+  let deferredPrompt = null;
 
-installBtn.classList.add('hidden');
+  installBtn.classList.add("hidden");
 
-window.addEventListener('beforeinstallprompt', e => {
+  window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
-    installBtn.classList.remove("hidden");
-    //On récupère l'évent
     deferredPrompt = e;
-})
+    installBtn.classList.remove("hidden");
+    console.log("beforeinstallprompt event fired");
+  });
 
-installBtn.addEventListener("click", async e => {
+  installBtn.addEventListener("click", (e) => {
     e.preventDefault();
-
-    //On utilise le prompt pour lancer l'installation
+    installBtn.classList.add("hidden");
     deferredPrompt.prompt();
 
-    //Si on a installé l'app, le bouton sera masqué
-    const userChoice = await deferredPrompt.userChoice;
-    if(userChoice === "accepted"){
-        installBtn.classList.add("hidden");
-    }
+    deferredPrompt.userChoice.then((choice) => {
+      console.log(choice);
+    });
     deferredPrompt = null;
+  });
 
-})
-//Event qui dit si mon app est installé
-window.addEventListener('appinstalled', e=> {
-    //Alors je n'affiche pas le bouton
-    installBtn.classList.add('hidden');
-})
+  window.addEventListener("appinstalled", (e) => {
+    console.log("PWA installed");
+    installBtn.classList.add("hidden");
+  });
+};
+export default install();
