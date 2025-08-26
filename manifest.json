@@ -3,6 +3,7 @@
     "short_name": "Demo",
     "description": "Demo de base d'une application PWA concernant les voyages",
     "start_url": "index.html",
+    "display":"standalone",
     "version": "1.0",
     "author": "Michon Maximilien",
     "icons": [
