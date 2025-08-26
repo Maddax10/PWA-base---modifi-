@@ -7,28 +7,33 @@
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="style.css" />
         <!--Permet de lier le manifest et rendre notre site installable en webApp-->
-        <link rel="manifest" href="manifest.json"/>
-        <meta name="theme-color" content="#FF0000">
+        <link rel="manifest" href="manifest.json" />
+        <!--Permet d'avoir un bandeau de couleur pour notre site/app (couleur du navigateur) sur android/ios-->
+        <meta name="theme-color" content="#FF0000" />
+        <!--Pour ios-->
+        <meta name="apple-mobile-web-app-status-bar" content="#002631" />
+
+        <link rel="apple-touch-icon" href="icons/favicon-96x96.png" />
         <script defer src="script.js"></script>
+        <script defer src="install.js"></script>
     </head>
     <body>
         <header>
-            <nav>
-                <h1 class="title">Une démo PWA</h1>
-                <hr class="titleHr" />
-            </nav>
+            <h1 class="title">Une démo PWA</h1>
+            <hr class="titleHr" />
+            <button class="installBtn" id="installBtn">Installer l'application</button>
         </header>
         <main>
             <h2>Voyage</h2>
-        <p>
-            Voyage en
-            <span class="voyage" id="voyage"></span>
-        </p>
-        <p class="description">
-            <span id="description"></span>
-        </p>
-        <p class="prix">Prix : <span id="prix"></span> €</p>
-        <hr />
+            <p>
+                Voyage en
+                <span class="voyage" id="voyage"></span>
+            </p>
+            <p class="description">
+                <span id="description"></span>
+            </p>
+            <p class="prix">Prix : <span id="prix"></span> €</p>
+            <hr />
         </main>
     </body>
 </html>
