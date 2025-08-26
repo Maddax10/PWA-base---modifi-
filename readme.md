@@ -38,3 +38,7 @@ C'est de l'actualisation en arrière-plan qui est asynchrone ou bien l'app est f
 4) Préparer l'app pour les notifications
  4.1) Utiliser les notifications locales
  4.2) Utiliser les notifications Pushs 
+
+# Rendre l'app installable
+
+Il faut créer un manifest.json
